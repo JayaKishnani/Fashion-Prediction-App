@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale = 1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/main.css') }}">
+        <title>Deep learning App</title>
+    </head>
+    <body>
+        <h1 >Fashion Classification</h1><br>
+        <!--To upload an image-->
+        <div class="container">
+        <h2>Upload and Display an Image</h2>
+            <input type="file" id="imageInput" accept="image/*" onchange="previewImage()">
+            <div id="imageContainer">
+                <img id="uploadedImage" src="#" alt="Uploaded Image">
+            </div>
+        </div>
+
+        <h2> What do you want to know about the product??</h2><br>
+        <div class="button-container">
+            <button class="button" name="color">Colour</button>
+            <button class="button" name="type">Type</button>
+            <button class="button" name="season">Season</button>
+            <button class="button" name="gender">Gender</button>
+        </div>
+        
+        {% for result in results%}
+            <h3>{{result}}</h3>
+        {%endfor%}<br><br><br>
+
+        
+    </body>
+</html>
